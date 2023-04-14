@@ -1,0 +1,27 @@
+#Открываем терминал
+git clone https://github.com/Kotenok-Gav/ToDo-React-Django.git        #Клонируем проект
+cd ToDo-React-Django                                                  #Переходим в директорию с проектом
+python3.11 -m venv env                                                #Создаем папку виртуального окружения
+source env/bin/activate                                               #Активируем вирт. окружение
+pip install —upgrade pip                                              #Обновляем менеджер пакетов
+pip install -r requirements.txt                                       #Устанавливаем библиотеки
+rm -rf node_modules package-lock.json && npm install && npm start     #Устанавливаем зависимости JS
+npm run dev                                                           #Запускаем React
+
+#Параллельно запускаем второй терминал
+cd ToDo-React-Django                                                  #Переходим в директорию с проектом
+python3.11 -m venv env                                                #Создаем папку виртуального окружения
+python manage.py migrate                                              #Проводим миграции
+python manage.py runserver                                            #Запускаем Django
+
+остальные возможные команды
+--------------------------------------------------------------
+npm init -y
+sudo npm i -D webpack webpack-cli
+npm run dev
+(если ошибка то ввести)
+export NODE_OPTIONS=--openssl-legacy-provider
+npm i redux react-redux redux-thunk redux-devtools-extension
+(если ошибка то ввести)
+npm config set legacy-peer-deps true
+npm audit fix —force
